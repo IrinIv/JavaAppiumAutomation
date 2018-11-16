@@ -17,5 +17,16 @@ public class MainClassTest extends MainClass {
 
     }
 
+    @Test
+    public void testGetClassNumber() {
+
+        int b = this.getClassNumber();
+        int expected = 45;
+
+        Assert.assertTrue("This is wrong number, should be great then 45", b > expected);
+
+
+    }
+
 
 }
