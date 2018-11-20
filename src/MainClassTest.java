@@ -28,5 +28,20 @@ public class MainClassTest extends MainClass {
 
     }
 
+    @Test
+    public void testGetClassString() {
+
+
+            String str = this.getClass_string();
+            String expected1 = "Hello, world";
+            String expected2 = "hello, world";
+
+
+        Assert.assertTrue("Please, check spelling", str == expected1 | str == expected2 );
+
+
+
+    }
+
 
 }
