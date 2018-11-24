@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchTest {
 
@@ -59,6 +62,39 @@ public class SearchTest {
     }
 
 
+    @Test
+    public void searchTextAndClearTest() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find Search",
+                5);
+
+
+        List<WebElement> search_result = driver.findElements(By.id("org.wikipedia:id/page_list_item_container"));
+
+            System.out.println(search_result.size());
+            int article_amount = search_result.size();
+
+            Assert.assertTrue("Cannot find any articles", article_amount > 0);
+
+
+
+        waitForElementAndClear(By.id("org.wikipedia:id/search_src_text"),
+                "Cannot find Search",
+                5);
+
+
+        waitForElementPresent(By.id("org.wikipedia:id/search_empty_image"),
+                "A lot of articles is here still",
+                5);
+
+    }
 
 
 
@@ -72,4 +108,54 @@ public class SearchTest {
 
     }
 
-}
+    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds) {
+
+
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+
+
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        element.click();
+
+        return element;
+
+    }
+
+    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds) {
+
+
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+
+
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        element.sendKeys(value);
+
+        return element;
+
+    }
+
+    private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds) {
+
+
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+
+
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        element.clear();
+
+        return element;
+    }
+
+    private boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds) {
+
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    }
+
+
+    }
