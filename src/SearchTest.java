@@ -163,6 +163,84 @@ public class SearchTest {
     }
 
 
+    @Test
+    public void testSaveArticleToMyList() {
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find Search",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
+                "Cannot find 'Java' article in search",
+                5);
+
+
+        waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                7);
+
+        waitForElementAndClick(By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button 'More options'",
+                5);
+
+        waitForElementAndClick(By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find 'Add to reading list' button",
+                5);
+
+        waitForElementAndClick(By.id("org.wikipedia:id/onboarding_button"),
+                "Cannot find button 'Got it'",
+                5);
+
+        waitForElementAndClear(By.id("org.wikipedia:id/text_input"),
+                "Cannot find input to set name of my reading list",
+                5);
+
+        String name_of_folder = "Learning programming";
+
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
+                name_of_folder,
+                "Cannot put text to set name of my reading list",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@text='OK']"),
+                "Cannot find button Ok",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find Close button",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find My List icon",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@text='" + name_of_folder +"']"),
+                "Cannot find created folder",
+                5);
+
+        swipeElemetToLeft(By.xpath("//*[@text='Java (programming language)']"),
+        "Cannot find saved article");
+
+
+        waitForElementNotPresent(By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot delete saved article",
+                5);
+
+
+
+    }
+
+
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -232,7 +310,12 @@ public class SearchTest {
         int start_y = (int) (size.height * 0.8);
         int end_y = (int) (size.height * 0.2);
 
-        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+        action
+                .press(x, start_y)
+                .waitAction(timeOfSwipe)
+                .moveTo(x, end_y)
+                .release()
+                .perform();
     }
 
     private void swipeUpQuick(){
@@ -253,6 +336,28 @@ public class SearchTest {
             swipeUpQuick();
             ++already_swiped;
         }
+    }
+
+    private void swipeElemetToLeft(By by, String error_message){
+
+        WebElement element = waitForElementPresent(by, error_message, 10);
+
+        int left_x = element.getLocation().getX();
+        int right_x = left_x + element.getSize().getHeight();
+
+        int upper_y = element.getLocation().getY();
+        int lower_y = upper_y + element.getSize().getHeight();
+        int middle_y = (upper_y + lower_y) / 2;
+
+        TouchAction action = new TouchAction(driver);
+
+        action
+                .press(right_x, middle_y)
+                .waitAction(300)
+                .moveTo(left_x, middle_y)
+                .release()
+                .perform();
+
     }
 
     }
