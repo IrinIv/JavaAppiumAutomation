@@ -1,4 +1,5 @@
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Assert;
@@ -93,6 +94,39 @@ public class SearchTest {
         waitForElementPresent(By.id("org.wikipedia:id/search_empty_image"),
                 "A lot of articles is here still",
                 5);
+
+    }
+
+    @Test
+    public void searchTextAndVerifyTest() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                "Java",
+                "Cannot find Search",
+                5);
+
+
+        List<WebElement> search_result = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+
+         List<String> seachResultList = new ArrayList<>();
+
+        for(int i = 0; i < search_result.size(); i++) {
+
+            MobileElement seachResult = (MobileElement) search_result.get(i);
+
+            seachResultList.add(seachResult.getAttribute("text"));
+
+
+            Assert.assertTrue("Word Java does not contain in the search", seachResultList.contains("Java") );
+        }
+
+        System.out.println(seachResultList);
+
 
     }
 
