@@ -1,11 +1,13 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -48,7 +50,7 @@ public class SearchTest {
 
 
     @Test
-    public void searchTest() {
+    public void testSearch() {
 
         WebElement element = driver.findElement(By.xpath("//*[contains(@text, 'Search Wikipedia')]"));
         element.click();
@@ -64,7 +66,7 @@ public class SearchTest {
 
 
     @Test
-    public void searchTextAndClearTest() {
+    public void testSearchTextAndClear() {
 
         waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
                 "Cannot find Search field",
@@ -98,7 +100,7 @@ public class SearchTest {
     }
 
     @Test
-    public void searchTextAndVerifyTest() {
+    public void testSearchTextAndVerify() {
 
         waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
                 "Cannot find Search field",
@@ -127,6 +129,36 @@ public class SearchTest {
 
         System.out.println(seachResultList);
 
+
+    }
+
+    @Test
+    public void testSwipeArticles() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                "Appium",
+                "Cannot find Search",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='Appium']") ,
+                "Cannot find 'Appium' article in search",
+                5);
+
+
+        waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                7);
+
+
+        swipeUpTillFindElement(By.xpath("//*[@text='View page in browser']"),
+                "Cannot find the end of this article",
+                20);
 
     }
 
@@ -191,5 +223,36 @@ public class SearchTest {
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
+    private void swipeUp(int timeOfSwipe){
+
+        TouchAction action = new TouchAction(driver);
+        Dimension size = driver.manage().window().getSize();
+
+        int x = size.width / 2;
+        int start_y = (int) (size.height * 0.8);
+        int end_y = (int) (size.height * 0.2);
+
+        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+    }
+
+    private void swipeUpQuick(){
+        swipeUp(200);
+
+    }
+
+    private void swipeUpTillFindElement(By by, String error_message, int max_swipes) {
+
+        int already_swiped = 0;
+        while (driver.findElements(by).size() == 0) {
+
+            if (already_swiped > max_swipes) {
+                waitForElementPresent(by, "Cannot find element by swiping up. \n" + error_message, 0);
+                return;
+
+            }
+            swipeUpQuick();
+            ++already_swiped;
+        }
+    }
 
     }

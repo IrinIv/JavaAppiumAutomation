@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f8913db-e53a-4311-8dd5-2ae3ded19e91" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/SearchTest.java" afterPath="$PROJECT_DIR$/src/SearchTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="SearchTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="100" column="39" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="39" />
+            <state relative-caret-position="432">
+              <caret line="158" column="72" lean-forward="false" selection-start-line="158" selection-start-column="72" selection-end-line="158" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,7 +158,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTest.searchTextAndVerifyTest">
+  <component name="RunManager" selected="JUnit.SearchTest.testSwipeArticles">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -179,26 +178,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-    </configuration>
-    <configuration name="MainClassTest.testGetClassNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainClassTest" />
-      <option name="METHOD_NAME" value="testGetClassNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration name="MainClassTest.testGetClassString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -280,6 +259,26 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="SearchTest.testSwipeArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SearchTest" />
+      <option name="METHOD_NAME" value="testSwipeArticles" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -341,19 +340,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassNumber" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassString" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndClearTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassString" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndClearTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndClearTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassString" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassNumber" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndClearTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MainClassTest.testGetClassString" />
       </list>
     </recent_temporary>
   </component>
@@ -374,18 +373,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTest_searchTextAndClearTest - 2018.11.23 at 23h 18m 44s.xml">
-      <configuration name="SearchTest.searchTextAndClearTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_searchTextAndVerifyTest - 2018.11.25 at 16h 21m 00s.xml">
-      <configuration name="SearchTest.searchTextAndVerifyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_searchTextAndVerifyTest - 2018.11.25 at 16h 21m 57s.xml">
-      <configuration name="SearchTest.searchTextAndVerifyTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_searchTextAndVerifyTest - 2018.11.25 at 16h 24m 37s.xml">
-      <configuration name="SearchTest.searchTextAndVerifyTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SearchTest_searchTextAndVerifyTest - 2018.11.25 at 16h 25m 23s.xml">
       <configuration name="SearchTest.searchTextAndVerifyTest" configurationId="JUnit" />
     </history-entry>
@@ -404,6 +391,18 @@
     <history-entry file="SearchTest_searchTextAndVerifyTest - 2018.11.25 at 16h 37m 17s.xml">
       <configuration name="SearchTest.searchTextAndVerifyTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 05m 26s.xml">
+      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 08m 14s.xml">
+      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 23m 07s.xml">
+      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 32m 24s.xml">
+      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="25" width="1300" height="771" extended-state="0" />
@@ -417,8 +416,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988167" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988167" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -445,7 +444,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
-          <line>113</line>
+          <line>115</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -658,8 +657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="100" column="39" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="39" />
+        <state relative-caret-position="432">
+          <caret line="158" column="72" lean-forward="false" selection-start-line="158" selection-start-column="72" selection-end-line="158" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
