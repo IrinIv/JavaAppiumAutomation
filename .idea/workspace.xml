@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f8913db-e53a-4311-8dd5-2ae3ded19e91" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/SearchTest.java" afterPath="$PROJECT_DIR$/src/SearchTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,11 +17,21 @@
       <file leaf-file-name="SearchTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="39" />
+            <state relative-caret-position="98">
+              <caret line="361" column="41" lean-forward="false" selection-start-line="361" selection-start-column="16" selection-end-line="361" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,7 +93,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="464" />
+    <option name="x" value="432" />
     <option name="y" value="24" />
     <option name="width" value="1008" />
     <option name="height" value="771" />
@@ -149,7 +158,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTest.testSaveArticleToMyList">
+  <component name="RunManager" selected="JUnit.SearchTest.testTitleOfArticlePresent">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -169,26 +178,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-    </configuration>
-    <configuration name="SearchTest.searchTextAndVerifyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SearchTest" />
-      <option name="METHOD_NAME" value="searchTextAndVerifyTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration name="SearchTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -270,6 +259,26 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="SearchTest.testTitleOfArticlePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SearchTest" />
+      <option name="METHOD_NAME" value="testTitleOfArticlePresent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -331,19 +340,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.testTitleOfArticlePresent" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testTitleOfArticlePresent" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
       </list>
     </recent_temporary>
   </component>
@@ -364,39 +373,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 17m 07s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 19m 40s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 33m 44s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 48m 39s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 51m 26s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 58m 25s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 01m 35s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 04m 03s.xml">
-      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 17m 06s.xml">
       <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 20m 40s.xml">
       <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 37m 46s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 40m 01s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 40m 46s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 44m 47s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 46m 09s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 47m 10s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 53m 36s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testTitleOfArticlePresent - 2018.11.27 at 22h 54m 26s.xml">
+      <configuration name="SearchTest.testTitleOfArticlePresent" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="464" y="24" width="1008" height="771" extended-state="0" />
+    <frame x="432" y="24" width="1008" height="771" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -435,20 +444,32 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
-          <line>273</line>
+          <line>274</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
+          <line>380</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
+          <line>514</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
-          <line>456</line>
+          <line>487</line>
           <properties class="SearchTest" method="swipeElementToLeft">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -689,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClassTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -703,14 +717,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,10 +728,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#870#1063#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="39" />
+        <state relative-caret-position="98">
+          <caret line="361" column="41" lean-forward="false" selection-start-line="361" selection-start-column="16" selection-end-line="361" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

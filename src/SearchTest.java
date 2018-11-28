@@ -165,6 +165,7 @@ public class SearchTest {
 
     @Test
     public void testSaveArticleToMyList() {
+
         waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
                 "Cannot find Search field",
                 5);
@@ -357,6 +358,36 @@ public class SearchTest {
     }
 
 
+    @Test
+    public void testTitleOfArticlePresent() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        String search_line = "Java";
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                search_line,
+                "Cannot find Search",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
+                "Cannot find 'Java' article in search",
+                5);
+
+
+        String search_title_locator = "//*[@resource-id='org.wikipedia:id/view_page_title_text']";
+        //String article_title = driver.findElement(By.id("org.wikipedia:id/view_page_title_text")).getAttribute("text");
+
+
+
+        assertElementPresent(By.xpath(search_title_locator),
+                "Title of article doesn't exist");
+
+    }
+
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -497,6 +528,19 @@ public class SearchTest {
 
             throw new AssertionError(default_message + " " + error_message);
         }
+
+    }
+
+    private void assertElementPresent(By by, String error_message){
+
+        int amount_of_elements = getAmountOfElements(by);
+        if (amount_of_elements == 0) {
+            String default_message = "An element '" + by.toString() + "' not supposed to be present";
+
+            throw new AssertionError(default_message + " " + error_message);
+
+        }
+
 
     }
 
