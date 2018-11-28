@@ -170,8 +170,9 @@ public class SearchTest {
                 5);
 
 
+        String search_line1 = "Java";
         waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                "Java",
+                search_line1,
                 "Cannot find Search",
                 5);
 
@@ -218,6 +219,47 @@ public class SearchTest {
                 "Cannot find Close button",
                 5);
 
+        //add second article
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        String search_line2 = "Pyton";
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                search_line2,
+                "Cannot find Search",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Python (programming language)']") ,
+                "Cannot find 'Pyton' article in search",
+                5);
+
+
+        waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                7);
+
+        waitForElementAndClick(By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button 'More options'",
+                5);
+
+        waitForElementAndClick(By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find 'Add to reading list' button",
+                5);
+
+
+        waitForElementAndClick(By.id("org.wikipedia:id/item_container"),
+                "Cannot find created folder",
+                5);
+
+
+        waitForElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot find Close button",
+                5);
+
+
 
         waitForElementAndClick(By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
                 "Cannot find My List icon",
@@ -228,13 +270,30 @@ public class SearchTest {
                 "Cannot find created folder",
                 5);
 
-        swipeElemetToLeft(By.xpath("//*[@text='Java (programming language)']"),
+
+        swipeElementToLeft(By.xpath("//*[@text='Java (programming language)']"),
         "Cannot find saved article");
 
 
         waitForElementNotPresent(By.xpath("//*[@text='Java (programming language)']"),
                 "Cannot delete saved article",
                 5);
+
+
+        waitForElementAndClick(By.xpath("//*[@text='Python (programming language)']"),
+                "Cannot find created folder",
+                5);
+
+
+        waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                7);
+
+        String article_title = driver.findElement(By.id("org.wikipedia:id/view_page_title_text")).getAttribute("text");
+
+        Assert.assertEquals("Python (programming language)", article_title);
+
+
 
 
 
@@ -395,16 +454,19 @@ public class SearchTest {
         }
     }
 
-    private void swipeElemetToLeft(By by, String error_message){
+    private void swipeElementToLeft(By by, String error_message){
 
-        WebElement element = waitForElementPresent(by, error_message, 10);
+        WebElement element = waitForElementPresent(by, error_message, 15);
+
 
         int left_x = element.getLocation().getX();
-        int right_x = left_x + element.getSize().getHeight();
+        int right_x = left_x + element.getSize().getWidth();
 
         int upper_y = element.getLocation().getY();
         int lower_y = upper_y + element.getSize().getHeight();
         int middle_y = (upper_y + lower_y) / 2;
+
+
 
         TouchAction action = new TouchAction(driver);
 

@@ -18,8 +18,8 @@
       <file leaf-file-name="SearchTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="279" column="39" lean-forward="false" selection-start-line="279" selection-start-column="39" selection-end-line="279" selection-end-column="39" />
+            <state relative-caret-position="161">
+              <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,16 +35,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -94,9 +84,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="133" />
-    <option name="y" value="25" />
-    <option name="width" value="1300" />
+    <option name="x" value="464" />
+    <option name="y" value="24" />
+    <option name="width" value="1008" />
     <option name="height" value="771" />
   </component>
   <component name="ProjectView">
@@ -114,7 +104,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,9 +129,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -159,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTest.testAmountOfEmptySearch">
+  <component name="RunManager" selected="JUnit.SearchTest.testSaveArticleToMyList">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -349,9 +339,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SearchTest.testSaveArticleToMyList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfEmptySearch" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SearchTest.testAmountOfNotEmptySearch" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.SearchTest.testSwipeArticles" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.SearchTest.searchTextAndVerifyTest" />
       </list>
@@ -374,39 +364,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTest_testAmountOfEmptySearch - 2018.11.26 at 20h 42m 27s.xml">
-      <configuration name="SearchTest.testAmountOfEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testAmountOfEmptySearch - 2018.11.26 at 20h 43m 08s.xml">
-      <configuration name="SearchTest.testAmountOfEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testAmountOfEmptySearch - 2018.11.26 at 20h 45m 25s.xml">
-      <configuration name="SearchTest.testAmountOfEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testAmountOfEmptySearch - 2018.11.26 at 20h 46m 43s.xml">
-      <configuration name="SearchTest.testAmountOfEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testAmountOfNotEmptySearch - 2018.11.26 at 20h 24m 08s.xml">
-      <configuration name="SearchTest.testAmountOfNotEmptySearch" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.25 at 18h 43m 30s.xml">
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 17m 07s.xml">
       <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 08m 14s.xml">
-      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 19m 40s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 23m 07s.xml">
-      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 33m 44s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 32m 24s.xml">
-      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 48m 39s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTest_testSwipeArticles - 2018.11.25 at 17h 33m 24s.xml">
-      <configuration name="SearchTest.testSwipeArticles" configurationId="JUnit" />
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 51m 26s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 21h 58m 25s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 01m 35s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 04m 03s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 17m 06s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTest_testSaveArticleToMyList - 2018.11.27 at 22h 20m 40s.xml">
+      <configuration name="SearchTest.testSaveArticleToMyList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="25" width="1300" height="771" extended-state="0" />
+    <frame x="464" y="24" width="1008" height="771" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -422,7 +412,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27344993" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.100414075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -442,7 +432,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
+          <line>273</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/SearchTest.java</url>
+          <line>456</line>
+          <properties class="SearchTest" method="swipeElementToLeft">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -475,11 +481,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,15 +708,24 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="210">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="279" column="39" lean-forward="false" selection-start-line="279" selection-start-column="39" selection-end-line="279" selection-end-column="39" />
+        <state relative-caret-position="161">
+          <caret line="166" column="39" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
