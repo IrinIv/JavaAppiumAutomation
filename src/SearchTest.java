@@ -6,10 +6,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -388,6 +385,60 @@ public class SearchTest {
 
     }
 
+    @Test
+    public void testChangeScreenOrientationOnSearchResult() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        String search_line = "Java";
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                search_line,
+                "Cannot find Search",
+                5);
+
+
+
+        waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
+                "Cannot find 'Java' topic searching by  in " + search_line,
+                15);
+
+
+        String title_before_rotation = waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
+               "text",
+                "Can not find title of article",
+                15);
+
+
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+
+
+        String title_after_rotation = waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Can not find title of article",
+                15);
+
+        Assert.assertEquals("Article title has been changed after rotation",
+                title_before_rotation, title_after_rotation);
+
+
+        driver.rotate(ScreenOrientation.PORTRAIT);
+
+
+        String title_after_second_rotation = waitForElementAndGetAttribute(By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Can not find title of article",
+                15);
+
+
+        Assert.assertEquals("Article title has been changed after rotation",
+                title_before_rotation, title_after_second_rotation);
+
+
+    }
+
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
@@ -541,6 +592,14 @@ public class SearchTest {
 
         }
 
+
+    }
+
+    private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
+
+        WebElement element = waitForElementPresent(by, error_message, timeOutInSeconds);
+
+        return element.getAttribute(attribute);
 
     }
 
