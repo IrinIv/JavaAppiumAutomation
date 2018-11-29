@@ -439,6 +439,37 @@ public class SearchTest {
 
     }
 
+    @Test
+    public void testCheckSearchArticleInBackground() {
+
+        waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
+                "Cannot find Search field",
+                5);
+
+
+        String search_line = "Java";
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
+                search_line,
+                "Cannot find Search",
+                5);
+
+
+
+        waitForElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
+                "Cannot find 'Java' topic searching by  in " + search_line,
+                15);
+
+        driver.runAppInBackground(2);
+
+        waitForElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
+                "Cannot find article after returning from background",
+                15);
+
+
+
+
+    }
+
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
