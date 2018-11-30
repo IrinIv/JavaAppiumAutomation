@@ -1,6 +1,7 @@
 import io.appium.java_client.MobileElement;
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
+import lib.ui.SearchPageObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -19,23 +20,26 @@ public class SearchTest extends CoreTestCase {
         super.setUp();
 
         MainPageObject = new MainPageObject(driver);
-    };
+    }
 
 
     @Test
     public void testSearch() {
 
-        WebElement element = driver.findElement(By.xpath("//*[contains(@text, 'Search Wikipedia')]"));
-        element.click();
 
-        WebElement search_field = MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/search_src_text") ,
-                "Cannot find Search field" ,
-                5);
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
-        String search_text = search_field.getAttribute("text");
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
 
-        Assert.assertEquals("Wrong Search Wikipedia input", "Search…", search_text);
     }
+
+
+
+
+
+
 
 
     @Test
