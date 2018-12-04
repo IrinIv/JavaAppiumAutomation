@@ -36,43 +36,16 @@ public class SearchTest extends CoreTestCase {
     }
 
 
-
-
-
-
-
-
     @Test
-    public void testSearchTextAndClear() {
+    public void testCancelSearch() {
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
-                "Cannot find Search field",
-                5);
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject.initSearchInput();
+        SearchPageObject.waitForCancelButtonToAppeare();
+        SearchPageObject.clickCancelSearch();
+        SearchPageObject.waitForCancelButtonToDisappeare();
 
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                "Java",
-                "Cannot find Search",
-                5);
-
-
-        List<WebElement> search_result = driver.findElements(By.id("org.wikipedia:id/page_list_item_container"));
-
-            System.out.println(search_result.size());
-            int article_amount = search_result.size();
-
-            Assert.assertTrue("Cannot find any articles", article_amount > 0);
-
-
-
-        MainPageObject.waitForElementAndClear(By.id("org.wikipedia:id/search_src_text"),
-                "Cannot find Search",
-                5);
-
-
-        MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/search_empty_image"),
-                "A lot of articles is here still",
-                5);
 
     }
 
