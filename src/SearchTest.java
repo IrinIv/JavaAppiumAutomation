@@ -1,5 +1,6 @@
 import io.appium.java_client.MobileElement;
 import lib.CoreTestCase;
+import lib.ui.ArticlePageObject;
 import lib.ui.MainPageObject;
 import lib.ui.SearchPageObject;
 import org.junit.Assert;
@@ -52,32 +53,19 @@ public class SearchTest extends CoreTestCase {
     @Test
     public void testSearchTextAndVerify() {
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
-                "Cannot find Search field",
-                5);
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                "Java",
-                "Cannot find Search",
-                5);
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
 
+        String article_title = ArticlePageObject.getArticleTitle();
 
-        List<WebElement> search_result = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
-
-         List<String> seachResultList = new ArrayList<>();
-
-        for(int i = 0; i < search_result.size(); i++) {
-
-            MobileElement seachResult = (MobileElement) search_result.get(i);
-
-            seachResultList.add(seachResult.getAttribute("text"));
-
-
-            Assert.assertTrue("Word Java does not contain in the search", seachResultList.contains("Java") );
-        }
-
-        System.out.println(seachResultList);
+        Assert.assertEquals("We see unexpected title",
+                "Java (programming language)",
+                article_title);
 
 
     }
@@ -85,30 +73,17 @@ public class SearchTest extends CoreTestCase {
     @Test
     public void testSwipeArticles() {
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
-                "Cannot find Search field",
-                5);
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Appium");
+        SearchPageObject.clickByArticleWithSubstring("Appium");
 
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                "Appium",
-                "Cannot find Search",
-                5);
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
 
+        ArticlePageObject.waitForTitleElement();
+        ArticlePageObject.swipeToFooter();
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='Appium']") ,
-                "Cannot find 'Appium' article in search",
-                5);
-
-
-        MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                7);
-
-
-        MainPageObject.swipeUpTillFindElement(By.xpath("//*[@text='View page in browser']"),
-                "Cannot find the end of this article",
-                20);
 
     }
 
