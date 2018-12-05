@@ -1,8 +1,6 @@
 import io.appium.java_client.MobileElement;
 import lib.CoreTestCase;
-import lib.ui.ArticlePageObject;
-import lib.ui.MainPageObject;
-import lib.ui.SearchPageObject;
+import lib.ui.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -91,136 +89,35 @@ public class SearchTest extends CoreTestCase {
     @Test
     public void testSaveArticleToMyList() {
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
-                "Cannot find Search field",
-                5);
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        String search_line1 = "Java";
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                search_line1,
-                "Cannot find Search",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Java (programming language)']") ,
-                "Cannot find 'Java' article in search",
-                5);
-
-
-        MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                7);
-
-        MainPageObject.waitForElementAndClick(By.xpath("//android.widget.ImageView[@content-desc='More options']"),
-                "Cannot find button 'More options'",
-                5);
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@text='Add to reading list']"),
-                "Cannot find 'Add to reading list' button",
-                5);
-
-        MainPageObject.waitForElementAndClick(By.id("org.wikipedia:id/onboarding_button"),
-                "Cannot find button 'Got it'",
-                5);
-
-        MainPageObject.waitForElementAndClear(By.id("org.wikipedia:id/text_input"),
-                "Cannot find input to set name of my reading list",
-                5);
-
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject.waitForTitleElement();
+        String article_title = ArticlePageObject.getArticleTitle();
         String name_of_folder = "Learning programming";
 
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
-                name_of_folder,
-                "Cannot put text to set name of my reading list",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@text='OK']"),
-                "Cannot find button Ok",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
-                "Cannot find Close button",
-                5);
+        ArticlePageObject.addFirstArticleToMyList(name_of_folder);
+        ArticlePageObject.closeArticle();
 
         //add second article
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text, 'Search Wikipedia')]") ,
-                "Cannot find Search field",
-                5);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Pyton");
+        SearchPageObject.clickByArticleWithSubstring("General-purpose, high-level programming language");
 
+        ArticlePageObject.waitForTitleElement();
+        ArticlePageObject.addNextArticleToMyList(name_of_folder);
+        ArticlePageObject.closeArticle();
 
-        String search_line2 = "Pyton";
-        MainPageObject.waitForElementAndSendKeys(By.id("org.wikipedia:id/search_src_text"),
-                search_line2,
-                "Cannot find Search",
-                5);
+        NavigationUI NavigationUI = new NavigationUI(driver);
+        NavigationUI.clickMyLists();
 
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Python (programming language)']") ,
-                "Cannot find 'Pyton' article in search",
-                5);
-
-
-        MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                7);
-
-        MainPageObject.waitForElementAndClick(By.xpath("//android.widget.ImageView[@content-desc='More options']"),
-                "Cannot find button 'More options'",
-                5);
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@text='Add to reading list']"),
-                "Cannot find 'Add to reading list' button",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.id("org.wikipedia:id/item_container"),
-                "Cannot find created folder",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
-                "Cannot find Close button",
-                5);
-
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
-                "Cannot find My List icon",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@text='" + name_of_folder +"']"),
-                "Cannot find created folder",
-                5);
-
-
-        MainPageObject.swipeElementToLeft(By.xpath("//*[@text='Java (programming language)']"),
-        "Cannot find saved article");
-
-
-        MainPageObject.waitForElementNotPresent(By.xpath("//*[@text='Java (programming language)']"),
-                "Cannot delete saved article",
-                5);
-
-
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@text='Python (programming language)']"),
-                "Cannot find created folder",
-                5);
-
-
-        MainPageObject.waitForElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find article title",
-                7);
-
-        String article_title = driver.findElement(By.id("org.wikipedia:id/view_page_title_text")).getAttribute("text");
-
-        Assert.assertEquals("Python (programming language)", article_title);
-
-
-
+        MyListsPageObject MyListPageObject = new MyListsPageObject(driver);
+        MyListPageObject.openFolderByName(name_of_folder);
+        MyListPageObject.swipeByArticleToDelete(article_title);
 
 
     }
