@@ -105,6 +105,6 @@ public class SearchPageObject extends MainPageObject {
     public void assertThereIsNotResultOfSearch() {
 
         this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT),
-                "We supposed to not find any results");
+                "We supposed not to find any results");
     }
 }
