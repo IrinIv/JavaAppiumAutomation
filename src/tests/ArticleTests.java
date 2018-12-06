@@ -27,7 +27,7 @@ public class ArticleTests extends CoreTestCase {
 
 
     }
-    
+
 
     @Test
     public void testSwipeArticles() {
