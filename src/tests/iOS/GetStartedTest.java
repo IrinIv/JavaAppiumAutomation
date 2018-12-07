@@ -12,7 +12,7 @@ public class GetStartedTest extends CoreTestCase {
 
         WelcomePageObject WelcomePageObject = new WelcomePageObject(driver);
 
-        WelcomePageObject.waitForMoreLink();
+        WelcomePageObject.waitForLearnMoreLink();
         WelcomePageObject.clickNextButton();
 
         WelcomePageObject.waitForNewWayToExploreText();
