@@ -8,7 +8,10 @@ public class MyListsPageObject extends MainPageObject {
 
     private static final String
         FOLDER_BY_NAME_TEMPLATE = "xpath://*[@text='{FOLDER_NAME}']",
-        ARTICLE_BY_TITLE_TEMPLATE = "xpath://*[@text='{TITLE}']";
+        ARTICLE_BY_TITLE_TEMPLATE = "xpath://*[@text='{TITLE}']",
+        BUTTON_EDIT_IOS = "xpath://XCUIElementTypeButton[@name=\"Edit\"]",
+        SAVED_ARTICLE_IOS = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell",
+        BUTTON_UNSAVE_IOS = "xpath://XCUIElementTypeButton[@name=\"Unsave\"]";
 
 
 
@@ -38,6 +41,7 @@ public class MyListsPageObject extends MainPageObject {
                 5);
 
     }
+
 
     public void waitForArticleToDisappearByTitle(String article_title){
 
@@ -75,4 +79,24 @@ public class MyListsPageObject extends MainPageObject {
     }
 
 
+    public void selectArticleFromIOSReadingList() {
+
+        this.waitForElementAndClick(BUTTON_EDIT_IOS,
+                "Cannot find and click edit button on iOS",
+                5);
+
+        this.waitForElementAndClick(SAVED_ARTICLE_IOS,
+                "Cannot find and click saved article on iOS",
+                5);
+    }
+
+
+    public void deleteArticleFromIOSLIst() {
+
+        this.waitForElementAndClick(BUTTON_UNSAVE_IOS,
+                "Cannot find and click Unsave button on iOS",
+                5);
+
+
+    }
 }

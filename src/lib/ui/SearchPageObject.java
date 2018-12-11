@@ -10,7 +10,10 @@ public class SearchPageObject extends MainPageObject {
                                 SEARCH_CANCEL_BUTTON = "id:org.wikipedia:id/search_close_btn",
                                 SEARCH_RESULT_BY_SUBSTRING_TPL = "xpath://*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
                                 SEARCH_RESULT_ELEMENT = "id://*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']",
-                                EMPTY_RESULT_LABEL = "xpath://*[@text='No results found']";
+                                EMPTY_RESULT_LABEL = "xpath://*[@text='No results found']",
+                                SEARCH_INIT_ELEMENT_IOS = "xpath://XCUIElementTypeSearchField[@name=\"Search Wikipedia\"]",
+                                SEARCH_INPUT_IOS = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeSearchField",
+                                SEARCH_IOS_RESULT = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]";
 
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
@@ -21,6 +24,8 @@ public class SearchPageObject extends MainPageObject {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
     }
 
+
+
     public void initSearchInput(){
 
         this.waitForElementAndClick(SEARCH_INIT_ELEMENT,
@@ -30,6 +35,19 @@ public class SearchPageObject extends MainPageObject {
         this.waitForElementPresent(SEARCH_INIT_ELEMENT,
                 "Cannot find search input after clicking search init element",
                 5);
+    }
+
+    public void initSearchInputIOS() {
+
+        this.waitForElementAndClick(SEARCH_INIT_ELEMENT_IOS,
+                "Cannot find and click search init element",
+                5);
+
+        this.waitForElementPresent(SEARCH_INIT_ELEMENT_IOS,
+                "Cannot find search input after clicking search init element",
+                5);
+
+
     }
 
     public void waitForCancelButtonToAppeare() {
@@ -63,6 +81,19 @@ public class SearchPageObject extends MainPageObject {
 
     }
 
+    public void typeSearchLineIOS(String search_line) {
+
+        this.waitForElementAndClear(SEARCH_INPUT_IOS,
+                "Cannot find and clear search input field in iOS",
+                5);
+
+        this.waitForElementAndSendKeys(SEARCH_INPUT_IOS,
+                search_line,
+                "Cannot find and type into search input",
+                5);
+
+    }
+
     public void waitForSearchResult(String substring){
 
 
@@ -82,6 +113,19 @@ public class SearchPageObject extends MainPageObject {
                 15);
 
     }
+
+    public void clickByIOSArticle() {
+
+
+        waitForElementAndClick(SEARCH_IOS_RESULT,
+                "Cannot find and click search IOS result",
+                15);
+
+
+    }
+
+
+
 
     public int getAmountOfFoundArticles() {
 
@@ -107,4 +151,7 @@ public class SearchPageObject extends MainPageObject {
         this.assertElementNotPresent(SEARCH_RESULT_ELEMENT,
                 "We supposed not to find any results");
     }
+
+
+
 }

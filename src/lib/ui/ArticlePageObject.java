@@ -12,6 +12,7 @@ public class ArticlePageObject extends MainPageObject {
 
     private static final String
             TITLE = "id:org.wikipedia:id/view_page_title_text",
+            TITLE_IOS = "xpath:",
             FOOTER_ELEMENT = "xpath://*[@text='View page in browser']",
             OPTIONS_BUTTON = "xpath://android.widget.ImageView[@content-desc='More options']",
             OPTIONS_ADD_TO_MY_LIST_BUTTON = "xpath://*[@text='Add to reading list']",
@@ -19,13 +20,30 @@ public class ArticlePageObject extends MainPageObject {
             MY_LIST_NAME_INPUT = "id:org.wikipedia:id/text_input",
             MY_LIST_OK_BUTTON = "xpath://*[@text='OK']",
             CLOSE_ARTICLE_BUTTON = "xpath://android.widget.ImageButton[@content-desc='Navigate up']",
-            MY_SAVED_LIST = "id:org.wikipedia:id/item_container";
+            MY_SAVED_LIST = "id:org.wikipedia:id/item_container",
+            CLOSE_DIALOG_IOS_BUTTON = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[@name=\"places auth close\"]",
+            READIND_LIST_IOS_BUTTON = "xpath://XCUIElementTypeToolbar[@name=\"Toolbar\"]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[@name=\"Save for later\"]",
+            BACK_IOS_ARTICLE_BUTTON = "xpath://XCUIElementTypeButton[@name=\"Back\"]",
+            TABLE_OF_CONTENTS_IOS = "xpath://XCUIElementTypeButton[@name=\"Table of contents\"]",
+            NAME_OF_CONTENT_IOS = "xpath://XCUIElementTypeStaticText[@name=\"Java (programming language)\"]";
+
+
+
 
     public WebElement waitForTitleElement() {
 
         return this.waitForElementPresent(TITLE,
                 "Cannot find article title on page",
                 15);
+    }
+
+    public WebElement waitForTitleElementIOS() {
+
+        return this.waitForElementPresent(TITLE_IOS,
+                "Cannot find article title on page",
+                15);
+
+
     }
 
     public String getArticleTitle() {
@@ -78,6 +96,20 @@ public class ArticlePageObject extends MainPageObject {
 
     }
 
+        public void addFirstArticleToMyIOSList() {
+
+
+        this.waitForElementAndClick(READIND_LIST_IOS_BUTTON,
+                "Cannot find button 'Reading List' on iOS",
+                5);
+
+        this.waitForElementAndClick(CLOSE_DIALOG_IOS_BUTTON,
+                    "Cannot find button 'Close dialog' on iOS",
+                    5);
+
+
+        }
+
     public void addNextArticleToMyList(String name_of_folder) {
 
 
@@ -98,6 +130,16 @@ public class ArticlePageObject extends MainPageObject {
 
     }
 
+    public void addNextArticleToMyIOSList() {
+
+
+        this.waitForElementAndClick(READIND_LIST_IOS_BUTTON,
+                   "Cannot find button 'Reading List' on iOS",
+                   5);
+
+
+       }
+
     public void closeArticle() {
 
         this.waitForElementAndClick(CLOSE_ARTICLE_BUTTON,
@@ -105,6 +147,17 @@ public class ArticlePageObject extends MainPageObject {
                 5);
 
     }
+
+
+    public void closeArticleIOS() {
+
+        this.waitForElementAndClick(BACK_IOS_ARTICLE_BUTTON,
+                "Cannot find Close button",
+                5);
+
+    }
+
+
 }
 
 
