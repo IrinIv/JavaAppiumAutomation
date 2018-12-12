@@ -39,7 +39,7 @@ public class ArticlePageObject extends MainPageObject {
 
     public WebElement waitForTitleElementIOS() {
 
-        return this.waitForElementPresent(TITLE_IOS + "/..",
+        return this.waitForElementPresent(TITLE_IOS,
                 "Cannot find article title on IOS screen",
                 15);
 

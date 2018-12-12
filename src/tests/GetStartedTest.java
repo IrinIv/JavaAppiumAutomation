@@ -1,4 +1,4 @@
-package tests.iOS;
+package tests;
 
 import lib.CoreTestCase;
 import lib.ui.*;
@@ -9,6 +9,11 @@ public class GetStartedTest extends CoreTestCase {
     @Test
 
     public void testPassThroughtWelcome() {
+
+        if (this.Platform.isAndroid()) {
+
+            return;
+        }
 
         WelcomePageObject WelcomePageObject = new WelcomePageObject(driver);
 
@@ -24,8 +29,8 @@ public class GetStartedTest extends CoreTestCase {
         WelcomePageObject.waitLearnMoreAboutDataCollectedLink();
         WelcomePageObject.clickGetStartedButton();
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
         SearchPageObject.initSearchInputIOS();
         SearchPageObject.typeSearchLineIOS("Java");
         SearchPageObject.clickByIOSArticle();
@@ -51,7 +56,14 @@ public class GetStartedTest extends CoreTestCase {
         MyListPageObject.selectArticleFromIOSReadingList();
         MyListPageObject.deleteArticleFromIOSLIst();
 
-        
+        int amount_of_search_results = MyListPageObject.getAmountOfSavedArticles();
+
+        assertTrue(
+                "We found a few results",
+                amount_of_search_results == 1);
+
+
+
 
 
     }

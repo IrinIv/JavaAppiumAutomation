@@ -11,7 +11,8 @@ public class MyListsPageObject extends MainPageObject {
         ARTICLE_BY_TITLE_TEMPLATE = "xpath://*[@text='{TITLE}']",
         BUTTON_EDIT_IOS = "xpath://XCUIElementTypeButton[@name=\"Edit\"]",
         SAVED_ARTICLE_IOS = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell",
-        BUTTON_UNSAVE_IOS = "xpath://XCUIElementTypeButton[@name=\"Unsave\"]";
+        BUTTON_UNSAVE_IOS = "xpath://XCUIElementTypeButton[@name=\"Unsave\"]",
+        SAVED_ARTICLES_IOS = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell" ;
 
 
 
@@ -97,6 +98,17 @@ public class MyListsPageObject extends MainPageObject {
                 "Cannot find and click Unsave button on iOS",
                 5);
 
+
+    }
+
+    public int getAmountOfSavedArticles() {
+
+
+        this.waitForElementPresent(SAVED_ARTICLES_IOS,
+                "Cannot find anything by request ",
+                15);
+
+        return this.getAmountOfElements(SAVED_ARTICLES_IOS);
 
     }
 }
