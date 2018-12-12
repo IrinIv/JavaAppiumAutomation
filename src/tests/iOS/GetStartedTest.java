@@ -51,7 +51,11 @@ public class GetStartedTest extends CoreTestCase {
         MyListPageObject.selectArticleFromIOSReadingList();
         MyListPageObject.deleteArticleFromIOSLIst();
 
+        String article_title = ArticlePageObject.getArticleTitleIOS();
 
+        assertEquals("We see unexpected title",
+                "Java (programming language) Object-oriented programming language",
+                article_title);
 
 
     }

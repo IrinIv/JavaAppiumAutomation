@@ -12,7 +12,7 @@ public class ArticlePageObject extends MainPageObject {
 
     private static final String
             TITLE = "id:org.wikipedia:id/view_page_title_text",
-            TITLE_IOS = "xpath:",
+            TITLE_IOS = "xpath://XCUIElementTypeLink[@name=\"Java (programming language) Object-oriented programming language\"]",
             FOOTER_ELEMENT = "xpath://*[@text='View page in browser']",
             OPTIONS_BUTTON = "xpath://android.widget.ImageView[@content-desc='More options']",
             OPTIONS_ADD_TO_MY_LIST_BUTTON = "xpath://*[@text='Add to reading list']",
@@ -39,8 +39,8 @@ public class ArticlePageObject extends MainPageObject {
 
     public WebElement waitForTitleElementIOS() {
 
-        return this.waitForElementPresent(TITLE_IOS,
-                "Cannot find article title on page",
+        return this.waitForElementPresent(TITLE_IOS + "/..",
+                "Cannot find article title on IOS screen",
                 15);
 
 
@@ -52,6 +52,15 @@ public class ArticlePageObject extends MainPageObject {
 
         return title_element.getAttribute("text");
     }
+
+
+    public String getArticleTitleIOS() {
+
+        WebElement title_element = waitForTitleElementIOS();
+
+        return title_element.getAttribute("name");
+    }
+
 
     public void swipeToFooter(){
 

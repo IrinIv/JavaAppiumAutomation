@@ -25,7 +25,7 @@ public class NavigationUI extends MainPageObject {
     public void clickMyIOSLists() {
 
         this.waitForElementAndClick(MY_IOS_LIST,
-                "Cannot find My List icon",
+                "Cannot find My List icon on iOS",
                 5);
     }
 }
