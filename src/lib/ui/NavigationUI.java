@@ -3,11 +3,11 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class NavigationUI extends MainPageObject {
+abstract public class NavigationUI extends MainPageObject {
 
-    private static final String
-        MY_LISTS_LINK = "xpath://android.widget.FrameLayout[@content-desc='My lists']",
-        MY_IOS_LIST = "xpath://XCUIElementTypeApplication[@name=\"Wikipedia\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTabBar/XCUIElementTypeButton[@name=\"Saved\"]";
+    protected static String
+
+            MY_LISTS_LINK ;
 
 
     public NavigationUI(AppiumDriver driver) {
@@ -22,10 +22,5 @@ public class NavigationUI extends MainPageObject {
 
     }
 
-    public void clickMyIOSLists() {
 
-        this.waitForElementAndClick(MY_IOS_LIST,
-                "Cannot find My List icon on iOS",
-                5);
-    }
 }

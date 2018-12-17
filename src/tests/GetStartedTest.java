@@ -1,7 +1,12 @@
 package tests;
 
 import lib.CoreTestCase;
+import lib.Platform;
 import lib.ui.*;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.MyListsPageObjectFactory;
+import lib.ui.factories.NavigationUiFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class GetStartedTest extends CoreTestCase {
@@ -10,14 +15,16 @@ public class GetStartedTest extends CoreTestCase {
 
     public void testPassThroughtWelcome() {
 
-        if (this.Platform.isAndroid()) {
+
+        WelcomePageObject WelcomePageObject = new WelcomePageObject(driver);
+
+        if (Platform.getInstance().isAndroid()) {
 
             return;
         }
 
-        WelcomePageObject WelcomePageObject = new WelcomePageObject(driver);
 
-        WelcomePageObject.waitForLearnMoreLink();
+        /*WelcomePageObject.waitForLearnMoreLink();
         WelcomePageObject.clickNextButton();
 
         WelcomePageObject.waitForNewWayToExploreText();
@@ -27,34 +34,36 @@ public class GetStartedTest extends CoreTestCase {
         WelcomePageObject.clickNextButton();
 
         WelcomePageObject.waitLearnMoreAboutDataCollectedLink();
-        WelcomePageObject.clickGetStartedButton();
+        WelcomePageObject.clickGetStartedButton();*/
 
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
-        SearchPageObject.initSearchInputIOS();
-        SearchPageObject.typeSearchLineIOS("Java");
-        SearchPageObject.clickByIOSArticle();
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
 
         ArticlePageObject.addFirstArticleToMyIOSList();
-        ArticlePageObject.closeArticleIOS();
+        ArticlePageObject.closeArticle();
 
         //add second article
-        SearchPageObject.initSearchInputIOS();
-        SearchPageObject.typeSearchLineIOS("Pyton");
-        SearchPageObject.clickByIOSArticle();
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Pyton");
+        SearchPageObject.clickByArticleWithSubstring("General-purpose, high-level programming language");
 
         ArticlePageObject.addNextArticleToMyIOSList();
-        ArticlePageObject.closeArticleIOS();
+        ArticlePageObject.closeArticle();
 
-        NavigationUI NavigationUI = new NavigationUI(driver);
-        NavigationUI.clickMyIOSLists();
+        NavigationUI NavigationUI = NavigationUiFactory.get(driver);
+        NavigationUI.clickMyLists();
 
-        MyListsPageObject MyListPageObject = new MyListsPageObject(driver);
+        MyListsPageObject MyListPageObject = MyListsPageObjectFactory.get(driver);
 
         MyListPageObject.selectArticleFromIOSReadingList();
         MyListPageObject.deleteArticleFromIOSLIst();
+
+
 
         int amount_of_search_results = MyListPageObject.getAmountOfSavedArticles();
 

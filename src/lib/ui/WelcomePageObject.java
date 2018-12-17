@@ -14,7 +14,8 @@ public class WelcomePageObject extends MainPageObject {
         STEP_ADD_OR_EDIT_PREFER_LANGUAGES_LINK = "xpath://XCUIElementTypeButton[@name=\"Add or edit preferred languages\"]",
         STEP_LEARN_MORE_ABOUT_DATA_COLLECTED_LINK = "xpath://XCUIElementTypeButton[@name=\"Learn more about data collected\"]",
         STEP_NEXT_LINK = "xpath://XCUIElementTypeButton[@name=\"Next\"]",
-        STEP_GET_STARTED_BUTTON = "xpath://XCUIElementTypeButton[@name=\"Get started\"]";
+        STEP_GET_STARTED_BUTTON = "xpath://XCUIElementTypeButton[@name=\"Get started\"]",
+        SKIP_BUTTON = "xpath://XCUIElementTypeButton[@name='Skip']";
 
 
 
@@ -66,5 +67,12 @@ public class WelcomePageObject extends MainPageObject {
                 "Cannot find and click 'Get started' button",
                 10);
 
+    }
+
+    public void clickSkip() {
+
+        this.waitForElementAndClick(SKIP_BUTTON,
+                "Can not find and click Skip Button",
+                10);
     }
 }
